@@ -1,9 +1,25 @@
 <template>
 <nav>
     <ul>
-        <router-link to="/" tag="li"><a>Stock Trader</a></router-link>
-        <router-link to="/portfolio" tag="li"><a>Portfolio</a></router-link>
-        <router-link to="/stocks" tag="li"><a>Stocks</a></router-link>
+        <router-link 
+            to="/" 
+            tag="li" 
+            active-class="bold" 
+            exact>
+                <a>Stock Trader</a>
+            </router-link>
+        <router-link 
+            to="/portfolio" 
+            tag="li" 
+            active-class="bold">
+                <a>Portfolio</a>
+            </router-link>
+        <router-link 
+            to="/stocks" 
+            tag="li" 
+            active-class="bold">
+                <a>Stocks</a>
+            </router-link>
     </ul>
     <div class="menu-secondary">
         <ul>
@@ -16,7 +32,7 @@
                 </ul>
             </li>
         </ul>
-        <p class="bold">Funds: ${{ fund }}</p>
+        <p class="bold">Funds: <span :class="{danger: funds < 100}">${{ funds }}</span></p>
     </div>
 </nav>
 </template>
@@ -24,7 +40,7 @@
 import { mapActions } from 'vuex'
     export default {
         computed: {
-            fund() {
+            funds() {
                 return this.$store.state.totalFund
             }
         },
@@ -76,6 +92,7 @@ import { mapActions } from 'vuex'
         width: 90px;
         margin: 0;
         padding: 5px 0;
+        background: #FFF;
         border-bottom: 1px solid #2b99e2;
     }
     .dropdown-content li:hover {

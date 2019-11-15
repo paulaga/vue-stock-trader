@@ -1,7 +1,7 @@
 <template>
     <div>
         <app-my-stock 
-            v-for="(stock) in stocks"
+            v-for="stock in stocks"
             :key="stock.id"
             :stock="stock"></app-my-stock>
     </div>
@@ -9,13 +9,13 @@
 <script>
     import MyStock from './MyStock'
     export default {
+        components: {
+            appMyStock: MyStock
+        },
         data() {
             return {
                 stocks: this.$store.state.stocks
             }
-        },
-        components: {
-            appMyStock: MyStock
         }
     }
 </script>

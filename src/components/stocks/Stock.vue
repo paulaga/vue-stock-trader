@@ -2,7 +2,7 @@
     <div class="stock-card">
         <div class="stock-card_header">
             <h2>{{ stock.name }}</h2>
-            <p>(Price: {{stock.price }})</p>
+            <p>(Price: {{ stock.price }})</p>
         </div>
         <div class="stock-card_content">
             <input 
@@ -16,7 +16,6 @@
     </div>
 </template>
 <script>
-    // import { mapActions } from 'vuex'
     export default {
         props: ['stock'],
         data() {

@@ -9,13 +9,13 @@
 <script>
     import Stock from './Stock'
     export default {
+        components: {
+            appStock: Stock
+        },
         data() {
             return {
                 stocks: this.$store.state.stocks
             }
-        },
-        components: {
-            appStock: Stock
         }
     }
 </script>

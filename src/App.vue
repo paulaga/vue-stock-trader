@@ -27,10 +27,15 @@ a, button {
   text-decoration: none;
   cursor: pointer;
 }
-a:hover {
- color:#2b99e2; 
-}
-.bold {
+.bold{
   font-weight: bold;
+}
+.danger { 
+  color: #e22d00;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0.5;
+  }
 }
 </style>

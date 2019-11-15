@@ -7,7 +7,7 @@ Vue.use(Vuex)
 export const store = new Vuex.Store({
     state: {
         totalFund: 10000,
-        stocks: stocks,
+        stocks,
     },
     mutations: {
         setNewStockPrice: (state, payload) => {
